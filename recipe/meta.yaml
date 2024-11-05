@@ -1,5 +1,5 @@
 {% set name = "neptune-pytorch-lightning" %}
-{% set version = "0.9.0" %}
+{% set version = "0.9.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/neptune-ai/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 24b504c6134656d9554790c41f4988d751e5e8ce8765602d4b8f5a070e52c375
+  sha256: 7fb0e5f8d927a64f11e7ed2fdc5f64d180e064e9ffa15d8c271d4b66c58b1039
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: 'Neptune Client integration with PyTorch Lightning'
+  summary: Neptune Client integration with PyTorch Lightning
   doc_url: https://docs.neptune.ai/integrations-and-supported-tools/model-training/pytorch-lightning
   dev_url: https://github.com/neptune-ai/neptune-pytorch-lightning
 
