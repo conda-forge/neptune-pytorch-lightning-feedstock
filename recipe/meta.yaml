@@ -11,15 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - neptune-client >=0.9.8
     - pytorch-lightning
 
@@ -28,6 +28,7 @@ test:
     - neptune_pytorch_lightning.impl
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
